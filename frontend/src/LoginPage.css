@@ -1,0 +1,121 @@
+:root {
+  --brown-primary: #8B5E3C; /* adjust to your site’s brown */
+  --brown-dark: #6A4228;
+  --brown-light: #F3E9E1;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--brown-light);
+}
+
+.login-form {
+  background: #fff;
+  padding: 2.5rem;              /* more padding */
+  border-radius: 20px;          /* curvy edges */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  width: 400px;                 /* wider form */
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.6rem;            /* bigger title */
+  color: var(--brown-dark);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  color: var(--brown-dark);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;              /* bigger input */
+  border: 1px solid var(--brown-primary);
+  border-radius: 10px;          /* curvy input edges */
+  font-size: 1rem;
+}
+
+.btn-brown {
+  width: 100%;
+  padding: 0.9rem;              /* bigger button */
+  background: var(--brown-primary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;          /* curvy button edges */
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-brown:hover {
+  background: var(--brown-dark);
+}
+
+.login-footer {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.login-footer a {
+  color: var(--brown-primary);
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+.cafe-name {
+  text-align: center;       /* ✅ centers the text */
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--brown-primary);
+  font-family: 'Georgia', serif; /* classy café vibe */
+}
+
+.logout-btn {
+  position: fixed;      /* Makes the button stick to the screen, not a container */
+  top: 10px;
+  right: 10px;
+
+  background: transparent;
+  border: 2px solid #6A4228;
+  color: #6A4228;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  z-index: 9999;        /* Ensures it's above all elements */
+}
+
+.logout-btn:hover {
+  background: #6A4228;
+  color: #fff;
+}

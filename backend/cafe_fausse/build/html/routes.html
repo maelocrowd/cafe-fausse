@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="Python" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Fausse Server-side (Flask) APIs &mdash; Café Fausse 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=afdf7161"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Cafe Fausse documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Café Fausse
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Routes:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Café Fausse Server-side (Flask) APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cafe_fausse.routes.admin.admin_login"><code class="docutils literal notranslate"><span class="pre">admin_login()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cafe_fausse.routes.health.health_check"><code class="docutils literal notranslate"><span class="pre">health_check()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cafe_fausse.routes.menu.get_menu"><code class="docutils literal notranslate"><span class="pre">get_menu()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cafe_fausse.routes.menuchange.change_menu_item"><code class="docutils literal notranslate"><span class="pre">change_menu_item()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cafe_fausse.routes.newsletter.subscribe_newsletter"><code class="docutils literal notranslate"><span class="pre">subscribe_newsletter()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cafe_fausse.routes.reservations.create_reservation"><code class="docutils literal notranslate"><span class="pre">create_reservation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cafe_fausse.routes.reservations.parse_time_slot"><code class="docutils literal notranslate"><span class="pre">parse_time_slot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Café Fausse</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Café Fausse Server-side (Flask) APIs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/routes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cafe-fausse-server-side-flask-apis">
+<h1>Café Fausse Server-side (Flask) APIs<a class="headerlink" href="#cafe-fausse-server-side-flask-apis" title="Link to this heading"></a></h1>
+<dl class="py function" id="module-cafe_fausse.routes.admin">
+<dt class="sig sig-object py" id="cafe_fausse.routes.admin.admin_login">
+<span class="sig-prename descclassname"><span class="pre">cafe_fausse.routes.admin.</span></span><span class="sig-name descname"><span class="pre">admin_login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cafe_fausse.routes.admin.admin_login" title="Link to this definition"></a></dt>
+<dd><p>Admin Login Endpoint</p>
+<p>Receives a JSON payload containing 'username' and 'password'. Checks the supplied credentials
+against hardcoded admin values. If authentication is successful, returns a fake JWT token.
+Otherwise, responds with an error message.</p>
+<p><strong>Request:</strong></p>
+<p>POST /admin
+Content-Type: application/json
+Body:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>&quot;username&quot;: &quot;&lt;admin_username&gt;&quot;,
+&quot;password&quot;: &quot;&lt;admin_password&gt;&quot;</p>
+</dd>
+</dl>
+<p>}</p>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p>200: Login successful, returns a fake JWT token.</p></li>
+<li><p>400: Missing username or password.</p></li>
+<li><p>401: Invalid credentials.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function" id="module-cafe_fausse.routes.health">
+<dt class="sig sig-object py" id="cafe_fausse.routes.health.health_check">
+<span class="sig-prename descclassname"><span class="pre">cafe_fausse.routes.health.</span></span><span class="sig-name descname"><span class="pre">health_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cafe_fausse.routes.health.health_check" title="Link to this definition"></a></dt>
+<dd><p>Health Check Endpoint</p>
+<p>Returns a simple status message indicating that the API server is running. Useful for monitoring purposes,
+including uptime checks and load balancer health verification.</p>
+<p><strong>Request:</strong></p>
+<p>GET /health</p>
+<p><strong>Response:</strong></p>
+<ul class="simple">
+<li><p>200: Returns {&quot;status&quot;: &quot;ok&quot;} if the server is healthy.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function" id="module-cafe_fausse.routes.menu">
+<dt class="sig sig-object py" id="cafe_fausse.routes.menu.get_menu">
+<span class="sig-prename descclassname"><span class="pre">cafe_fausse.routes.menu.</span></span><span class="sig-name descname"><span class="pre">get_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cafe_fausse.routes.menu.get_menu" title="Link to this definition"></a></dt>
+<dd><p>Retrieves the menu data from the local menu.json file.
+Menu Retrieval Endpoint</p>
+<p>Returns the contents of the menu stored in 'data/menu.json' as a JSON response.
+If the file does not exist, responds with a 404 error message.</p>
+<p><strong>Request:</strong></p>
+<blockquote>
+<div><p>GET /menu</p>
+</div></blockquote>
+<p><strong>Response:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>200: Successfully retrieved menu, returns the JSON contents of menu.json.</p></li>
+<li><p>404: menu.json file not found.</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response containing the menu data if found,
+otherwise a JSON error message with a 404 status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-cafe_fausse.routes.menuchange">
+<dt class="sig sig-object py" id="cafe_fausse.routes.menuchange.change_menu_item">
+<span class="sig-prename descclassname"><span class="pre">cafe_fausse.routes.menuchange.</span></span><span class="sig-name descname"><span class="pre">change_menu_item</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cafe_fausse.routes.menuchange.change_menu_item" title="Link to this definition"></a></dt>
+<dd><p>Menu Item Update Endpoint</p>
+<p>Receives a JSON payload containing the name of the menu item to update, along with any fields to change
+(e.g., &quot;price&quot;, &quot;description&quot;, &quot;image&quot;). Locates the specified item in 'menu.json' and updates its details.
+If successful, returns the updated item; otherwise, returns an error message.</p>
+<p><strong>Request:</strong></p>
+<p>POST /menuchange
+Content-Type: application/json
+Body:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>&quot;name&quot;: &quot;&lt;item_name&gt;&quot;,
+&quot;price&quot;: &lt;optional_new_price&gt;,</p>
+</dd>
+</dl>
+<p>}</p>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p>200: Update successful, returns the updated item.</p></li>
+<li><p>400: Missing item name or request JSON.</p></li>
+<li><p>404: menu.json or specified item not found.</p></li>
+<li><p>500: Unable to write changes to file.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function" id="module-cafe_fausse.routes.newsletter">
+<dt class="sig sig-object py" id="cafe_fausse.routes.newsletter.subscribe_newsletter">
+<span class="sig-prename descclassname"><span class="pre">cafe_fausse.routes.newsletter.</span></span><span class="sig-name descname"><span class="pre">subscribe_newsletter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cafe_fausse.routes.newsletter.subscribe_newsletter" title="Link to this definition"></a></dt>
+<dd><p>Subscribes a user to the Café Fausse newsletter.</p>
+<dl>
+<dt>Request:</dt><dd><dl>
+<dt>JSON payload:</dt><dd><blockquote>
+<div><p>POST /newsletter
+Content-Type: application/json</p>
+<p>Example payload:
+{</p>
+<blockquote>
+<div><p>&quot;email&quot;: &quot;<a class="reference external" href="mailto:jane&#37;&#52;&#48;example&#46;com">jane<span>&#64;</span>example<span>&#46;</span>com</a>&quot;,      # required, must be valid format
+&quot;name&quot;: &quot;Jane Doe&quot;                # optional</p>
+</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+<dt>Response:</dt><dd><ul class="simple">
+<li><p>201: Subscription successful, returns a success message.</p></li>
+<li><p>400: Missing email, returns an error message.</p></li>
+<li><p>422: Invalid email format, returns an error message.</p></li>
+<li><p>500: Server/database error, returns an error message.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-cafe_fausse.routes.reservations">
+<dt class="sig sig-object py" id="cafe_fausse.routes.reservations.create_reservation">
+<span class="sig-prename descclassname"><span class="pre">cafe_fausse.routes.reservations.</span></span><span class="sig-name descname"><span class="pre">create_reservation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cafe_fausse.routes.reservations.create_reservation" title="Link to this definition"></a></dt>
+<dd><p>Creates a new reservation for a specific time slot.</p>
+<dl>
+<dt><strong>Request:</strong></dt><dd><p>POST /reservations
+Content-Type: application/json
+Body:
+{</p>
+<blockquote>
+<div><p>&quot;datetime&quot;: &quot;&lt;ISO 8601 date/time string&gt;&quot;,   # Reservation time (required)
+&quot;name&quot;: &quot;&lt;guest name&gt;&quot;,                      # Name of the guest (required)
+&quot;email&quot;: &quot;&lt;guest's email address&gt;&quot;,          # Guest's email (required)
+&quot;phone&quot;: &quot;&lt;guest's phone number&gt;&quot;,           # Guest's phone (optional)
+&quot;guests&quot;: &lt;number of guests&gt;                 # Number of guests (required, int or numeric string)</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>Validates the time slot and required fields. Checks if there is at least one available table
+for the requested time slot. If so, assigns a random available table and creates or updates
+the customer, then saves the reservation. If the slot is full or input is invalid, an error is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>201 and reservation details if successful.</p></li>
+<li><p>400 if required details are missing or invalid.</p></li>
+<li><p>409 if no tables are available at the requested time.</p></li>
+<li><p>500 on server/database error.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cafe_fausse.routes.reservations.parse_time_slot">
+<span class="sig-prename descclassname"><span class="pre">cafe_fausse.routes.reservations.</span></span><span class="sig-name descname"><span class="pre">parse_time_slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cafe_fausse.routes.reservations.parse_time_slot" title="Link to this definition"></a></dt>
+<dd><p>Parses an ISO-format string value into a datetime object for a reservation time slot.
+Returns a datetime object if successful, or None if the value is invalid or missing.
+Used for validating and converting incoming reservation time values from client requests.</p>
+</dd></dl>
+
+<span class="target" id="module-cafe_fausse.routes"></span></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Cafe Fausse documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Mael T. Deneke.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

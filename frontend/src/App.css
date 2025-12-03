@@ -1,0 +1,458 @@
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 2.5rem clamp(1rem, 4vw, 4rem);
+  background: radial-gradient(
+      ellipse at top,
+      rgba(180, 138, 100, 0.15),
+      transparent 60%
+    ),
+    var(--brand-cream);
+}
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  color: var(--brand-primary);
+}
+
+.primary-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  color: var(--brand-dark);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: var(--brand-primary);
+  color: #fff;
+  border-color: var(--brand-primary);
+}
+
+.site-main {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.site-footer {
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(15, 23, 42, 0.75);
+}
+
+.hero {
+  padding: clamp(2rem, 6vw, 4rem);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #2f1e12, #6b4421);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.2);
+}
+
+.hero .page-heading .lead {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.home-grid article {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+}
+
+.home-grid h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--brand-primary);
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 1.5rem;
+  }
+
+  .site-header,
+  .site-footer {
+    padding: 1.25rem;
+  }
+
+  .primary-nav {
+    flex-direction: column;
+  }
+
+  .newsletter-fields {
+    flex-direction: column;
+  }
+
+  .newsletter-fields button {
+    width: 100%;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.85rem 1.75rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button.primary {
+  background: var(--brand-accent);
+  color: #1c130b;
+  box-shadow: 0 15px 30px rgba(180, 138, 100, 0.4);
+}
+
+.button.ghost {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.hero-ctas {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-panel {
+  margin-top: 1rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid var(--border-color);
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.newsletter-form {
+  flex: 1;
+  min-width: 250px;
+}
+
+.newsletter-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-fields {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.newsletter-fields input {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+}
+
+.newsletter-fields button {
+  border-radius: 999px;
+  border: none;
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu-section {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.menu-section h2 {
+  margin: 0;
+  color: var(--brand-primary);
+}
+
+.menu-section p {
+  color: rgba(15, 23, 42, 0.75);
+}
+
+.menu-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* .menu-card {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--brand-cream);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+} */
+.menu-card {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--brand-cream);
+  display: flex;
+  flex-direction: row;       /* ⬅️ change from column to row */
+  justify-content: space-between; /* keeps text left, image right */
+  align-items: center;       /* vertically align them */
+  gap: 1rem;                 /* spacing between text and image */
+}
+
+.menu-card-image img {
+  width: 120px;   /* fixed width */
+  height: auto;
+  border-radius: 6px;
+}
+
+.menu-card h3 {
+  margin: 0;
+  color: var(--brand-dark);
+}
+
+.menu-card .price {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--brand-primary);
+}
+
+.reservation-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.reservation-details {
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: #fff;
+}
+
+.reservation-details ul {
+  padding-left: 1.25rem;
+  margin: 0 0 1rem 0;
+}
+
+.reservation-details li {
+  margin-bottom: 0.5rem;
+}
+
+.reservation-form {
+  padding: 2rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-row label {
+  font-weight: 600;
+}
+
+.form-row input,
+.form-row select {
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+}
+
+.reservation-form button {
+  border: none;
+  border-radius: 12px;
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-feedback {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.form-feedback.error {
+  color: #b33a3a;
+}
+
+.form-feedback.success {
+  color: #0f8a5f;
+}
+
+.story-panel,
+.awards,
+.reviews {
+  padding: 2rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.founders-grid,
+.values-grid,
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.founders-grid article,
+.values-grid article,
+.reviews-grid article {
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--brand-cream);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-tile {
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: zoom-in;
+}
+
+.gallery-tile img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-tile span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  z-index: 10;
+}
+
+.lightbox figure {
+  max-width: 900px;
+  width: 100%;
+  background: #000;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.lightbox img {
+  width: 100%;
+  display: block;
+}
+
+.lightbox figcaption {
+  color: #fff;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}

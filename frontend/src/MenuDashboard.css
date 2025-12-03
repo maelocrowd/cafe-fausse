@@ -1,0 +1,105 @@
+:root {
+    --brown-primary: #8B5E3C;   /* Café Fausse main brown */
+    --brown-dark: #6A4228;      /* darker accent */
+    --brown-light: #F3E9E1;     /* soft background */
+  }
+  
+  .menu-dashboard {
+    padding: 2rem;
+    background: var(--brown-light);
+    min-height: 100vh;
+  }
+  
+  .menu-dashboard h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brown-primary);
+    margin-bottom: 2rem;
+  }
+  
+  .menu-section {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 16px; /* curvy edges */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .menu-section h2 {
+    color: var(--brown-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .menu-section p {
+    color: var(--brown-dark);
+    margin-bottom: 1rem;
+  }
+  
+  .menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-table th,
+  .menu-table td {
+    border: 1px solid #ddd;
+    padding: 0.6rem;
+    text-align: left;
+  }
+  
+  .menu-table th {
+    background: var(--brown-light);
+    color: var(--brown-dark);
+  }
+  
+  .menu-table input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* curvy inputs */
+    font-size: 0.95rem;
+  }
+  
+  button {
+    background: var(--brown-primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+  
+  button:hover {
+    background: var(--brown-dark);
+  }
+
+  /* Style the file upload input to match other buttons */
+input[type="file"] {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  /* Optional: make the file input look like your brown button */
+  input[type="file"]::file-selector-button {
+    background: var(--brown-primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  input[type="file"]::file-selector-button:hover {
+    background: var(--brown-dark);
+  }

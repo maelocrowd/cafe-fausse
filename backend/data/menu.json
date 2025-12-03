@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Starters",
+    "description": "Begin the evening with vibrant flavors and seasonal produce.",
+    "items": [
+      {
+        "name": "Bruschetta",
+        "description": "Fresh tomatoes, basil, olive oil, toasted baguette slices",
+        "price": "$8.99",
+        "image": "/images/Bruschetta.png"
+      },
+      {
+        "name": "Caesar Salad",
+        "description": "Crisp romaine with homemade Caesar dressing",
+        "price": "$9.00",
+        "image": "/images/Caesar_Salad.png"
+      }
+    ]
+  },
+  {
+    "title": "Main Courses",
+    "description": "Signature plates crafted by Chef Antonio Rossi.",
+    "items": [
+      {
+        "name": "Grilled Salmon",
+        "description": "Lemon butter sauce and seasonal vegetables",
+        "price": "$22.00",
+        "image": "https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "Ribeye Steak",
+        "description": "12 oz prime cut with garlic mashed potatoes",
+        "price": "$28.00",
+        "image": "/images/gallery-ribeye-steak.webp"
+      },
+      {
+        "name": "Vegetable Risotto",
+        "description": "Creamy Arborio rice with wild mushrooms",
+        "price": "$18.00",
+        "image": "/images/Vegetable_Risotto.png"
+      }
+    ]
+  },
+  {
+    "title": "Desserts",
+    "description": "House-made indulgences perfect for sharing.",
+    "items": [
+      {
+        "name": "Tiramisu",
+        "description": "Classic Italian dessert with mascarpone",
+        "price": "$7.50",
+        "image": "/images/Tiramisu.png"
+      },
+      {
+        "name": "Cheesecake",
+        "description": "Creamy cheesecake with berry compote",
+        "price": "$7.00",
+        "image": "/images/cheesecake.png"
+      }
+    ]
+  },
+  {
+    "title": "Beverages",
+    "description": "Curated sips to complement every course.",
+    "items": [
+      {
+        "name": "Red Wine (Glass)",
+        "description": "A selection of Italian reds",
+        "price": "$10.00",
+        "image": "/images/redwine.png"
+      },
+      {
+        "name": "White Wine (Glass)",
+        "description": "Crisp and refreshing",
+        "price": "$9.00",
+        "image": "/images/whitewine.png"
+      },
+      {
+        "name": "Craft Beer",
+        "description": "Local artisan brews",
+        "price": "$6.00",
+        "image": "/images/beer.png"
+      },
+      {
+        "name": "Espresso",
+        "description": "Strong and aromatic",
+        "price": "$3.00",
+        "image": "/images/espresso.png"
+      }
+    ]
+  }
+]
