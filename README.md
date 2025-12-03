@@ -1,6 +1,8 @@
 **Café Fausse - Deployment Guide**
 
 Full‑stack implementation of the Café Fausse website development as described in Software Requirements Specification(SRS). The project pairs a React + Vite front end with a Flask + PostgreSQL back end to deliver menu browsing, reservations, gallery, founder story, newsletter signup flows, and administration.
+
+
 **Functionalities**
 
 **Web Pages:**
@@ -19,7 +21,7 @@ Full‑stack implementation of the Café Fausse website development as described
 - The site includes a protected administration portal accessible only to authorized staff.
 - Admins access the portal via the `/admin` route.
 - Upon visiting `/admin`, admins are prompted to log in with their credentials.
-- Use username:admin and passord:admin for login (A simple token-based implementation to update menu item prices in the menuchange dashboard which can be further enhanced to use config file or database).
+- Use username:admin and password:admin for login (A simple token-based implementation to update menu item prices in the menuchange dashboard which can be further enhanced to use config file or database).
 - Upon successful login, admins receive access to special dashboard functionality.
 
 **Updating Menu Item Prices:**
@@ -131,5 +133,7 @@ For detailed API documentation including route details, parameters, and example 
 
 Open this file in your web browser for a full, navigable API reference.
 
-# cafe-fausse
-Quantic MSSE Project (Café Fausse Website Development)
+## Author
+- **Name:** Mael Taye Deneke  
+- **Email:** maelo.smarter@gmail.com  
+- **GitHub:** [maelocrowd](https://github.com/maelocrowd)
