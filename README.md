@@ -1,6 +1,35 @@
 **Café Fausse - Deployment Guide**
 
 Full‑stack implementation of the Café Fausse website development as described in Software Requirements Specification(SRS). The project pairs a React + Vite front end with a Flask + PostgreSQL back end to deliver menu browsing, reservations, gallery, founder story, newsletter signup flows, and administration.
+**Functionalities**
+
+**Web Pages:**
+- **Home Page:** Presents the restaurant’s name, contact details, hours of operation, and easy-to-use navigation links to explore the site.
+- **Menu Page:** Displays an organized menu grouped by category (e.g., Starters, Mains, Desserts), with each item accompanied by a description and price.
+- **Reservations Page:** Offers an interactive form allowing guests to book tables, directly integrated with the back-end reservation system for availability checks.
+- **About Us Page:** Shares the history of Café Fausse, highlights its mission, and introduces the owners/founders with brief profiles.
+- **Gallery Page:** Features a visually rich display of restaurant photographs, awards, and positive guest testimonials.
+
+**Additional Features:**
+- **Email Newsletter Signup:** Visitors can sign up to receive news and updates through a secure email subscription form.
+- **Reservation System:** The back-end provides robust processing for table bookings, automatically checking availability and assigning tables as per capacity and guest preferences.
+**Administration Login & Menu Management**
+
+**Administration Login:**
+- The site includes a protected administration portal accessible only to authorized staff.
+- Admins access the portal via the `/admin` route.
+- Upon visiting `/admin`, admins are prompted to log in with their credentials.
+- Use username:admin and passord:admin for login (A simple token-based implementation to update menu item prices in the menuchange dashboard which can be further enhanced to use config file or database).
+- Upon successful login, admins receive access to special dashboard functionality.
+
+**Updating Menu Item Prices:**
+- Logged-in admins can view a real-time list of all menu items and their current prices.
+- The admin dashboard features an intuitive interface to edit menu item details:
+    - Select a menu item to update its price.
+    - Enter the new price in the input field and save changes.
+- All changes are instantly saved and reflected on the public menu.
+- An activity log or confirmation alert appears upon successful updates.
+
 
 **\## Prerequisites**
 
