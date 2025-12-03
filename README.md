@@ -101,3 +101,6 @@ For detailed API documentation including route details, parameters, and example 
 [backend/cafe_fausse/build/index.html](backend/cafe_fausse/build/index.html)
 
 Open this file in your web browser for a full, navigable API reference.
+
+# cafe-fausse
+Quantic MSSE Project (Café Fausse Website Development)
