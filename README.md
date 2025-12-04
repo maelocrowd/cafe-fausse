@@ -15,8 +15,8 @@ Full‑stack implementation of the Café Fausse website development as described
 **Additional Features:**
 - **Email Newsletter Signup:** Visitors can sign up to receive news and updates through a secure email subscription form.
 - **Reservation System:** The back-end provides robust processing for table bookings, automatically checking availability and assigning tables as per capacity and guest preferences.
-**Administration Login & Menu Management**
 
+**Administration Login & Menu Management**
 **Administration Login:**
 - The site includes a protected administration portal accessible only to authorized staff.
 - Admins access the portal via the `/admin` route.
