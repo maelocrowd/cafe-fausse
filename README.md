@@ -17,6 +17,7 @@ Full‑stack implementation of the Café Fausse website development as described
 - **Reservation System:** The back-end provides robust processing for table bookings, automatically checking availability and assigning tables as per capacity and guest preferences.
 
 **Administration Login & Menu Management**
+
 **Administration Login:**
 - The site includes a protected administration portal accessible only to authorized staff.
 - Admins access the portal via the `/admin` route.
